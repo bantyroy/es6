@@ -1,0 +1,60 @@
+<html>
+<head>
+    <title>Find & FindIndex</title>
+    <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism.css" rel="stylesheet" />
+</head>
+<body>
+    <h1>Find & FindIndex</h1>
+    <pre><code class="language-javascript">
+const array = [5, 12, 8, 130, 44];
+
+// Using find to get the first element greater than 10
+const found = array.find(element => element > 10);
+console.log(found); // Output: 12
+
+// Using findIndex to get the index of the first element greater than 10
+const foundIndex = array.findIndex(element => element > 10);
+console.log(foundIndex); // Output: 1
+
+const y = [
+    {id:10, name: 'A'},
+    {id:12, name: 'V'},
+    {id:15, name: 'B'},
+    {id:11, name: 'D'},
+    {id:19, name: 'Y'},
+    {id:20, name: 'Z'}  
+];
+
+console.log(y.find((item) => item.id >15 )); // Output: {id:19, name: 'Y'}
+console.log(y.findIndex((item) => item.id >15 )); // Output: 4
+console.log(y.find((item) => item.name === 'D' )); // Output: {id:11, name: 'D'}    
+console.log(y.findIndex((item) => item.name === 'D' )); // Output: 3
+</code></pre>
+    <script>
+        const array = [5, 12, 8, 130, 44];
+
+        // Using find to get the first element greater than 10
+        const found = array.find(element => element > 10);
+        console.log(found); // Output: 12
+
+        // Using findIndex to get the index of the first element greater than 10
+        const foundIndex = array.findIndex(element => element > 10);
+        console.log(foundIndex); // Output: 1
+
+        const y = [
+            {id:10, name: 'A'},
+            {id:12, name: 'V'},
+            {id:15, name: 'B'},
+            {id:11, name: 'D'},
+            {id:19, name: 'Y'},
+            {id:20, name: 'Z'}  
+        ];
+
+        console.log(y.find((item) => item.id >15 )); // Output: {id:19, name: 'Y'}
+        console.log(y.findIndex((item) => item.id >15 )); // Output: 4
+        console.log(y.find((item) => item.name === 'D' )); // Output: {id:11, name: 'D'}    
+        console.log(y.findIndex((item) => item.name === 'D' )); // Output: 3
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+</body>
+</html>
