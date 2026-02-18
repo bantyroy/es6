@@ -29,10 +29,13 @@
             <a class="nav-link" href="Find-FindIndex.html">Find & FindIndex</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="Arrow-Functions.html">Arrow Functions</a>
+            <a class="nav-link" href="Arrow-Functions.html">Arrow Functions</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="Class.html">Classes</a>
+            <a class="nav-link active" href="Class.html">Classes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
           </li>
         </ul>
       </div>
@@ -43,49 +46,48 @@
 
     
     <div class="container">
-        <h3 class="text-primary">Arrow Functions</h1>
+        <h3 class="text-primary">Classes</h1>
         <pre><code class="language-javascript">
-const data = [5, 12, 8, 130, 44];
+class Person {
+    topic = "ES6 Classes";
+    constructor(name) {
+        this.name = name;
+        console.warn("Constructor", this.topic);
+    }
 
-const newData = data.map((item) => item * 2);
-console.log(newData); // Output: [10, 24, 16, 260, 88]
+    getName() {
+        console.warn("Normal", this.name);
+    }
 
-let item={
-      name:"J Samanta",
-      getName:function()
-      {
-          console.warn("Normal",this)
-      },
-      getNameArrow:()=>{
-          console.warn("Arrow",this)
-      }
-  }
+    getNameArrow = () => {
+        console.warn("Arrow", this.name);
+    }
+}
 
-
-  item.getName();
-  item.getNameArrow();
-
+const item = new Person("J Samanta");
+item.getName();
+item.getNameArrow();
 </code></pre>
     </div>
     
     <script>
-        const data = [5, 12, 8, 130, 44];
+        class Person {
+            topic = "ES6 Classes";
+            constructor(name) {
+                this.name = name;
+                console.warn("Constructor", this.topic);
+            }
 
-        const newData = data.map((item) => item * 2);
-        console.log(newData); // Output: [10, 24, 16, 260, 88]
+            getName() {
+                console.warn("Normal", this.name);
+            }
 
-        let item={
-            name:"J Samanta",
-            getName:function()
-            {
-                console.warn("Normal",this)
-            },
-            getNameArrow:()=>{
-                console.warn("Arrow",this)
+            getNameArrow = () => {
+                console.warn("Arrow", this.name);
             }
         }
 
-
+        const item = new Person("J Samanta");
         item.getName();
         item.getNameArrow();
     </script>
