@@ -16,18 +16,19 @@
         <pre><code class="language-javascript">
 let data={
     list:'friend',
-    names:['Bruce','Peter','Sam'],
-    getFriends:function()
-    {
-        this.names.map((item)=>{
-            console.warn(this.list,item)
-        })
-    }, 
+    names:['Bruce','Peter','Sam'],    
     getFriendsNormal:function()
     {
-        let _this = this;
+        let _this = this; // As function creates its own scope, we need to store the reference of 'this' in a variable
         this.names.map(function(item){
             console.warn(_this.list,item)
+        })
+    },
+    getFriends:function()
+    {
+        // Arrow functions do not have their own 'this' context, they inherit it from the parent scope
+        this.names.map((item)=>{
+            console.warn(this.list,item)
         })
     }
 }
@@ -41,19 +42,20 @@ data.getFriendsNormal();
         let data={
             list:'friend',
             names:['Bruce','Peter','Sam'],
-            getFriends:function()
-            {
-                this.names.map((item)=>{
-                    console.warn(this.list,item)
-                })
-            },
             getFriendsNormal:function()
             {
-                let _this = this;
+                let _this = this; // As function creates its own scope, we need to store the reference of 'this' in a variable
                 this.names.map(function(item){
                     console.warn(_this.list,item)
                 })
-            }
+            },
+            getFriends:function()
+            {
+                // Arrow functions do not have their own 'this' context, they inherit it from the parent scope
+                this.names.map((item)=>{
+                    console.warn(this.list,item)
+                })
+            }            
         }
 
         data.getFriends();
@@ -61,31 +63,4 @@ data.getFriendsNormal();
     </script>
     <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
 </body>
-</html>
-          getAngular = () => {
-              console.warn("Angular");
-          }
-
-          getVueJS() {
-              console.warn("VueJS" );
-          }
-      }
-
-      class Website extends FrontendTechnology {
-          constructor(name) {
-              super();
-              this.name = name;
-          }
-
-          getName() {
-              console.warn("Name: ", this.name);
-          }    
-      }
-
-      const item = new Website("Facebook");
-      item.getName();
-      item.getReactJS();
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
-</body>
-</html>
+</html> 
