@@ -1,0 +1,80 @@
+<html>
+<head>
+    <title>ES6</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism.css" rel="stylesheet" />
+</head>
+<body>
+  <!-- Navbar Start -->
+  <iframe src="Navigation.html" width="100%" height="55px"></iframe>
+  <!-- Navbar End --> 
+
+    
+    <div class="container">
+        <h3 class="text-primary">Inheritance</h1>
+        <pre><code class="language-javascript">
+class FrontendTechnology {
+    getReactJS() {
+        console.warn("ReactJS" );
+    }
+
+    getAngular = () => {
+        console.warn("Angular");
+    }
+
+    getVueJS() {
+        console.warn("VueJS" );
+    }
+}
+
+class Website extends FrontendTechnology {
+    constructor(name) {
+        super(); // Call the parent class constructor
+        this.name = name;
+    }
+
+    getName() {
+        console.warn("Name: ", this.name);
+    }    
+}
+
+const item = new Website("Facebook");
+item.getName(); // Output: Name: Facebook
+item.getReactJS(); // Output: ReactJS
+</code></pre>
+    </div>
+    
+    <script>
+        class FrontendTechnology {
+          getReactJS() {
+              console.warn("ReactJS" );
+          }
+
+          getAngular = () => {
+              console.warn("Angular");
+          }
+
+          getVueJS() {
+              console.warn("VueJS" );
+          }
+      }
+
+      class Website extends FrontendTechnology {
+          constructor(name) {
+              super();
+              this.name = name;
+          }
+
+          getName() {
+              console.warn("Name: ", this.name);
+          }    
+      }
+
+      const item = new Website("Facebook");
+      item.getName();
+      item.getReactJS();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+</body>
+</html>
